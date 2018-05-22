@@ -1,0 +1,29 @@
+﻿@model HomeViewModel
+
+<html>
+<head>
+    <meta name="viewport" content ="width=device-width" />
+
+</head>
+
+
+<body>
+    <h2>@Model.Title</h2>
+
+
+    @foreach (var stuff in Model.Stuffs)
+    {
+        //if(stuff.Id==1)
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <img src="@stuff.ImageUrl" alt="">
+                <div class="caption">
+                    <h3>
+                        <a asp-controller="Coffee" >@stuff.Name</a>
+                    </h3>
+                </div>
+            </div>
+        </div>
+    }
+</body>
+</html>
