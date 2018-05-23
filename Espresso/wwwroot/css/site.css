@@ -9,3 +9,8 @@
     padding-left: 15px;
     padding-right: 15px;
 }
+
+.navbar, .navbar-inverse {
+    background: #000 !important;
+    border-color: #000 !important;
+}

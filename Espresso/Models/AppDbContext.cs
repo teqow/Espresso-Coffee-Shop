@@ -16,5 +16,6 @@ namespace Espresso.Models
         public DbSet<Coffee> Coffees { get; set; }
         public DbSet<Stuff> Stuffs { get; set; }
         public DbSet<Cake> Cakes { get; set; }
+        public DbSet<Feedback> Feedbacks { get; set; }
     }
 }

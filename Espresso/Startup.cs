@@ -27,6 +27,7 @@ namespace Espresso
             services.AddTransient<ICoffeeRepository, CoffeeRepository>();
             services.AddTransient<IStuffRepository, StuffRepository>();
             services.AddTransient<ICakeRepository, CakeRepository>();
+            services.AddTransient<IFeedbackRepository, FeedbackRepository>();
 
             services.AddMvc();
         }
