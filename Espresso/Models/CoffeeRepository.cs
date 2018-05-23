@@ -22,7 +22,6 @@ namespace Espresso.Models
         public Coffee GetCoffeeById(int coffeeId)
         {
             return _appDbContext.Coffees.FirstOrDefault(c => c.Id == coffeeId);
-
         }
 
 

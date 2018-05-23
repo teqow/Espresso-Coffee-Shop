@@ -5,8 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20180522163656_InitialMigration.cs" />
+    <Compile Remove="Migrations\20180522163656_InitialMigration.Designer.cs" />
     <Compile Remove="Migrations\20180522190238_StuffMigration.cs" />
     <Compile Remove="Migrations\20180522190238_StuffMigration.Designer.cs" />
+    <Compile Remove="Migrations\20180523122531_AddCoffees.cs" />
+    <Compile Remove="Migrations\20180523122531_AddCoffees.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Espresso.Models
 {
-    public class Coffee
+    public class Cake
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -13,7 +13,5 @@ namespace Espresso.Models
         public string LongDescription { get; set; }
         public decimal Price { get; set; }
         public string ImageUrl { get; set; }
-        public string ImageThumbnailUrl { get; set; }
-
     }
 }

@@ -26,6 +26,7 @@ namespace Espresso
                 {
                     var context = services.GetRequiredService<AppDbContext>();
                     DbInitializerCoffees.Seed(context);
+                    DbInitializerCakes.Seed(context);
                 }
                 catch (Exception)
                 {

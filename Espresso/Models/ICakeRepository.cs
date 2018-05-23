@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 
 namespace Espresso.Models
 {
-    public interface ICoffeeRepository
+    public interface ICakeRepository
     {
-        IEnumerable<Coffee> GetAllCoffees();
+        IEnumerable<Cake> GetAllCakes();
 
-        Coffee GetCoffeeById(int coffeeId);
+        Cake GetCakeById(int cakeId);
     }
 }

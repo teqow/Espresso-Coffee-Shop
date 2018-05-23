@@ -26,6 +26,7 @@ namespace Espresso
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<ICoffeeRepository, CoffeeRepository>();
             services.AddTransient<IStuffRepository, StuffRepository>();
+            services.AddTransient<ICakeRepository, CakeRepository>();
 
             services.AddMvc();
         }

@@ -24,7 +24,7 @@ namespace Espresso.Controllers
             var homeViewModel = new HomeViewModel()
             {
                 Stuffs = stuffs.ToList(),
-                Title = "Check one",
+                Title = "Our Menu",
 
             };
             return View(homeViewModel);

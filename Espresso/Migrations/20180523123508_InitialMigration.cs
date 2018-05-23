@@ -10,7 +10,7 @@ namespace Espresso.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Caffes",
+                name: "Coffees",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -24,14 +24,31 @@ namespace Espresso.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Caffes", x => x.Id);
+                    table.PrimaryKey("PK_Coffees", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Stuffs",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ImageUrl = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Stuffs", x => x.Id);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Caffes");
+                name: "Coffees");
+
+            migrationBuilder.DropTable(
+                name: "Stuffs");
         }
     }
 }

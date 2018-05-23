@@ -2,7 +2,7 @@
 
 <html>
 <head>
-    <meta name="viewport" content ="width=device-width" />
+    <meta name="viewport" content="width=device-width" />
 
 </head>
 
@@ -13,17 +13,33 @@
 
     @foreach (var stuff in Model.Stuffs)
     {
-        //if(stuff.Id==1)
-        <div class="col-sm-4 col-lg-4 col-md-4">
-            <div class="thumbnail">
-                <img src="@stuff.ImageUrl" alt="">
-                <div class="caption">
-                    <h3>
-                        <a asp-controller="Coffee" >@stuff.Name</a>
-                    </h3>
+        if (stuff.Id == 1)
+        {
+            <div class="col-sm-4 col-lg-4 col-md-4">
+                <div class="thumbnail">
+                    <img src="@stuff.ImageUrl" alt="">
+                    <div class="caption">
+                        <h3>
+                            <a asp-controller="Coffee">@stuff.Name</a>
+                        </h3>
+                    </div>
                 </div>
             </div>
-        </div>
+        }
+        else if (stuff.Id == 2)
+        {
+            <div class="col-sm-4 col-lg-4 col-md-4">
+                <div class="thumbnail">
+                    <img src="@stuff.ImageUrl" alt="">
+                    <div class="caption">
+                        <h3>
+                            <a asp-controller="Cake">@stuff.Name</a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+
+        }
     }
 </body>
 </html>

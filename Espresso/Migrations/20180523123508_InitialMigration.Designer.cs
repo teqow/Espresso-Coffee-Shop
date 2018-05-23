@@ -11,7 +11,7 @@ using System;
 namespace Espresso.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20180522163656_InitialMigration")]
+    [Migration("20180523123508_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,7 +21,7 @@ namespace Espresso.Migrations
                 .HasAnnotation("ProductVersion", "2.0.1-rtm-125")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Espresso.Models.Caffe", b =>
+            modelBuilder.Entity("Espresso.Models.Coffee", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -40,7 +40,21 @@ namespace Espresso.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Caffes");
+                    b.ToTable("Coffees");
+                });
+
+            modelBuilder.Entity("Espresso.Models.Stuff", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ImageUrl");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Stuffs");
                 });
 #pragma warning restore 612, 618
         }

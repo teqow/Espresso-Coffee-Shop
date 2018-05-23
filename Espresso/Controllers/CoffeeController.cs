@@ -21,7 +21,7 @@ namespace Espresso.Controllers
         {
             ViewBag.Title = "Coffee World";
 
-            var coffees = _coffeeRepository.GetAllCoffees().OrderBy(p => p.Name);
+            var coffees = _coffeeRepository.GetAllCoffees().OrderBy(c => c.Name);
 
             var coffeeViewModel = new CoffeeViewModel()
             {
@@ -37,6 +37,7 @@ namespace Espresso.Controllers
             var coffee = _coffeeRepository.GetCoffeeById(id);
             if (coffee == null)
                 return NotFound();
+
 
             return View(coffee);
         }

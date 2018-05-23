@@ -20,8 +20,8 @@ namespace Espresso.Models
         {
             _stuffs = new List<Stuff>
             {
-                new Stuff { Id = 1 , Name = "Our Coffees",ImageUrl = "https://www.visafranchise.com/wp-content/uploads/2017/09/Coffee-Photo-1.jpg"},
-                new Stuff { Id = 2 , Name = "Our Cakes", ImageUrl ="https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--1956_11.jpg?itok=_8PNgmrc"}
+                new Stuff { Id = 1 , Name = "Our Coffees",ImageUrl = "https://www.healthline.com/hlcmsresource/images/AN_images/espresso-ground-coffee-beans-1296x728.jpg"},
+                new Stuff { Id = 2 , Name = "Our Cakes", ImageUrl ="https://s3.przepisy.pl/przepisy3ii/img/variants/767x0/mus-z-trzech-czekolad342648.jpg"}
             };
         }
 
