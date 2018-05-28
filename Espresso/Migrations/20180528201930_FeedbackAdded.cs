@@ -16,9 +16,9 @@ namespace Espresso.Migrations
                     FeedbackId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     ContactMe = table.Column<bool>(nullable: false),
-                    Email = table.Column<string>(nullable: true),
-                    Message = table.Column<string>(nullable: true),
-                    Name = table.Column<string>(nullable: true)
+                    Email = table.Column<string>(maxLength: 100, nullable: false),
+                    Message = table.Column<string>(maxLength: 5000, nullable: false),
+                    Name = table.Column<string>(maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {

@@ -11,6 +11,8 @@
     <Compile Remove="Migrations\20180522190238_StuffMigration.Designer.cs" />
     <Compile Remove="Migrations\20180523122531_AddCoffees.cs" />
     <Compile Remove="Migrations\20180523122531_AddCoffees.Designer.cs" />
+    <Compile Remove="Migrations\20180523141628_FeedbackAdded.cs" />
+    <Compile Remove="Migrations\20180523141628_FeedbackAdded.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -67,13 +67,19 @@ namespace Espresso.Migrations
                     b.Property<int>("FeedbackId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<bool>("ContacMe");
+                    b.Property<bool>("ContactMe");
 
-                    b.Property<string>("Email");
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(100);
 
-                    b.Property<string>("Message");
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasMaxLength(5000);
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100);
 
                     b.HasKey("FeedbackId");
 
