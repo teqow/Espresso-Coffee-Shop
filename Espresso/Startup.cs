@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Espresso.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -25,14 +24,10 @@ namespace Espresso
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
-            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
-
             services.AddTransient<ICoffeeRepository, CoffeeRepository>();
             services.AddTransient<IStuffRepository, StuffRepository>();
             services.AddTransient<ICakeRepository, CakeRepository>();
             services.AddTransient<IFeedbackRepository, FeedbackRepository>();
-
 
             services.AddMvc();
         }
@@ -51,8 +46,6 @@ namespace Espresso
             }
 
             app.UseStaticFiles();
-
-            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {
