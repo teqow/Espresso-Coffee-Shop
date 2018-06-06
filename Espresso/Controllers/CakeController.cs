@@ -12,7 +12,6 @@ namespace Espresso.Controllers
     {
         private readonly ICakeRepository _cakeRepository;
 
-
         public CakeController(ICakeRepository cakeRepository)
         {
             _cakeRepository = cakeRepository;
