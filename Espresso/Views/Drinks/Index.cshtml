@@ -1,0 +1,22 @@
+﻿@model DrinksViewModel
+
+
+<h2>@Model.Title</h2>
+
+<body>
+    @foreach (var drinks in Model.Drinks)
+    {
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <img src="@drinks.ImageUrl" alt="">
+                <div class="caption">
+                    <h3 class="pull-right">@drinks.Price.ToString("c")</h3>
+                    <h3>
+                        <a asp-controller="Drinks" asp-action="Details" asp-route-id="@drinks.Id">@drinks.Name</a>
+                    </h3>
+                    <p>@drinks.ShortDescription</p>
+                </div>
+            </div>
+        </div>
+    }
+</body>

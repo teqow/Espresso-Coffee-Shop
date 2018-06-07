@@ -40,6 +40,7 @@ namespace Espresso
             services.AddTransient<IStuffRepository, StuffRepository>();
             services.AddTransient<ICakeRepository, CakeRepository>();
             services.AddTransient<IFeedbackRepository, FeedbackRepository>();
+            services.AddTransient<IDrinksRepository, DrinksRepository>();
 
             services.AddMvc();
         }

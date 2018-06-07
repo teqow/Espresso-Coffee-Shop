@@ -21,7 +21,8 @@ namespace Espresso.Models
             _stuffs = new List<Stuff>
             {
                 new Stuff { Id = 1 , Name = "Our Coffees",ImageUrl = "https://www.healthline.com/hlcmsresource/images/AN_images/espresso-ground-coffee-beans-1296x728.jpg"},
-                new Stuff { Id = 2 , Name = "Our Cakes", ImageUrl ="https://s3.przepisy.pl/przepisy3ii/img/variants/767x0/mus-z-trzech-czekolad342648.jpg"}
+                new Stuff { Id = 2 , Name = "Our Cakes", ImageUrl ="https://s3.przepisy.pl/przepisy3ii/img/variants/767x0/mus-z-trzech-czekolad342648.jpg"},
+                new Stuff { Id = 3, Name ="Our Drinks", ImageUrl ="https://img.leafcdn.tv/640/ppds/0e6a5f25-553e-4328-80c1-0ef92078e6fa.jpg"}
             };
         }
 

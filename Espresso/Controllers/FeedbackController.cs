@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace Espresso.Controllers
 {
-
     [Authorize]
+
     public class FeedbackController : Controller
     {
         private readonly IFeedbackRepository _feedbackRepository;
