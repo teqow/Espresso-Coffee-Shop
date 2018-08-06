@@ -17,7 +17,7 @@ namespace Espresso.Controllers
             _coffeeRepository = coffeeRepository;
         }
 
-        public IActionResult Index()
+        public ViewResult Index()
         {
             ViewBag.Title = "Coffee World";
 

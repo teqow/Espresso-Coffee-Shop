@@ -10,5 +10,7 @@ namespace Espresso.Models
         IEnumerable<Cake> GetAllCakes();
 
         Cake GetCakeById(int cakeId);
+
+        void AddCake(Cake cake);
     }
 }

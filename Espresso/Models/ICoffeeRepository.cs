@@ -10,5 +10,8 @@ namespace Espresso.Models
         IEnumerable<Coffee> GetAllCoffees();
 
         Coffee GetCoffeeById(int coffeeId);
+
+        void SaveCoffe(Coffee coffee);
+
     }
 }

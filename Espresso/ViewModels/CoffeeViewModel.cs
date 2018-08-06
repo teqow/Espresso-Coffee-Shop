@@ -8,7 +8,7 @@ namespace Espresso.ViewModels
 {
     public class CoffeeViewModel
     {
-        public List<Coffee> Coffees { get; set; }
+        public IEnumerable<Coffee> Coffees { get; set; }
         public string Title { get; set; }
     }
 }

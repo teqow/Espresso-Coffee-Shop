@@ -13,6 +13,13 @@ namespace Espresso.Models
         {
             _appDbContext = appDbContext;
         }
+
+        public void AddCake(Cake cake)
+        {
+            _appDbContext.Add(cake);
+            return;
+        }
+
         public IEnumerable<Cake> GetAllCakes()
         {
             return _appDbContext.Cakes;
@@ -22,5 +29,7 @@ namespace Espresso.Models
         {
             return _appDbContext.Cakes.FirstOrDefault(c => c.Id == cakeId);
         }
+
+        
     }
 }

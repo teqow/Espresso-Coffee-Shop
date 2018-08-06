@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Coffee>
+@{
+    Layout = "_AdminLayout";
+}
+
+<table class="table table-striped">
+    <tr>
+        <th class="text-right">ID</th>
+        <th>Produkt</th>
+        <th class="text-right">Cena</th>
+        <th class="text-center">Akcje</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="text-right">@item.Id</td>
+            <td>@item.Name</td>
+            <td class="text-right">@item.Price.ToString("c")</td>
+            <td class="text-center">
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">
+                    Edytuj
+                </a>
+                    <input type="hidden" name="Id" value="@item.Id" />
+            </td>
+        </tr>
+    }
+</table>

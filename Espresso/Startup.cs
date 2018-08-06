@@ -26,6 +26,7 @@ namespace Espresso
         {
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+
             services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
 
             services.Configure<IdentityOptions>(options =>
@@ -41,6 +42,8 @@ namespace Espresso
             services.AddTransient<ICakeRepository, CakeRepository>();
             services.AddTransient<IFeedbackRepository, FeedbackRepository>();
             services.AddTransient<IDrinksRepository, DrinksRepository>();
+
+            
 
             services.AddMvc();
         }
@@ -70,4 +73,5 @@ namespace Espresso
             });
         }
     }
+
 }

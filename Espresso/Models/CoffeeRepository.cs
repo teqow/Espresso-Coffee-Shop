@@ -16,7 +16,7 @@ namespace Espresso.Models
 
         public IEnumerable<Coffee> GetAllCoffees()
         {
-            return _appDbContext.Coffees;
+             return _appDbContext.Coffees;
         }
 
         public Coffee GetCoffeeById(int coffeeId)
@@ -24,7 +24,11 @@ namespace Espresso.Models
             return _appDbContext.Coffees.FirstOrDefault(c => c.Id == coffeeId);
         }
 
+        public void SaveCoffe(Coffee coffee)
+        {
+            _appDbContext.Add(coffee);
+        }
 
-      
+
     }
 }
