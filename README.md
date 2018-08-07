@@ -1,7 +1,4 @@
 ## Espresso-Coffee-Shop
-## Table of contents
-* [General info](#general-info)
-* [Technologies](#technologies)
 
 ## General info
 It's web-app, about coffee shop. We can see menu, location, contact, take feedback and can make account. Administrator can change stuff in menu.
