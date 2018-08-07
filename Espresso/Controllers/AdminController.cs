@@ -10,6 +10,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Espresso.Controllers
 {
+    //Do not forget
+    //Login= Administrator
+    //Password= Secret123!
+    [Authorize(Roles = "Administrator")]
     public class AdminController : Controller
     {
         private readonly ICoffeeRepository _coffeeRepository;

@@ -13,11 +13,13 @@ namespace Espresso.Controllers
     {
         private readonly SignInManager<User> _signInManager;
         private readonly UserManager<User> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
-        public AccountController(SignInManager<User> signInManager, UserManager<User> userManager)
+        public AccountController(SignInManager<User> signInManager, UserManager<User> userManager, RoleManager<IdentityRole> roleManager)
         {
             _signInManager = signInManager;
             _userManager = userManager;
+            _roleManager = roleManager;
         }
 
         public IActionResult Login()
@@ -37,10 +39,12 @@ namespace Espresso.Controllers
             {
                 var result = await _signInManager.PasswordSignInAsync(user, loginViewModel.Password, false, false);
 
+
                 if (result.Succeeded)
                 {
                     return RedirectToAction("Index", "Home");
                 }
+
             }
 
             ModelState.AddModelError("", "User name/password not found");
@@ -62,6 +66,19 @@ namespace Espresso.Controllers
 
                 if (result.Succeeded)
                 {
+                    if (!await _roleManager.RoleExistsAsync("Administrator"))
+                    {
+                        var role = new IdentityRole("Administrator");
+
+                       var res = await _roleManager.CreateAsync(role);
+
+                        if (res.Succeeded)
+                        {
+                            await _userManager.AddToRoleAsync(user, "Administrator");
+
+                        }
+                    }
+
                     await _signInManager.SignInAsync(user, false);
                     return RedirectToAction("Index", "Home");
                 }
@@ -89,5 +106,6 @@ namespace Espresso.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
+
     }
 }
