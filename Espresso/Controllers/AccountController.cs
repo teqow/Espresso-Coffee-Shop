@@ -76,6 +76,8 @@ namespace Espresso.Controllers
                         {
                             await _userManager.AddToRoleAsync(user, "Administrator");
 
+                            return RedirectToPage("Admin", "Index");
+
                         }
                     }
 

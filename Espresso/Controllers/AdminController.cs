@@ -23,7 +23,7 @@ namespace Espresso.Controllers
             _coffeeRepository = coffeeRepository;
         }
 
-   
+
         [HttpGet]
         public IActionResult Index() => View(_coffeeRepository.GetAllCoffees());
 
