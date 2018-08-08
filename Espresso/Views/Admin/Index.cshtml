@@ -3,13 +3,17 @@
     Layout = "_AdminLayout";
 }
 
-<table class="table table-striped">
+<a asp-action="Create">Utwórz</a>
+<table class="table table-bordered">
+    <thead>
     <tr>
         <th class="text-right">ID</th>
         <th>Produkt</th>
         <th class="text-right">Cena</th>
         <th class="text-center">Akcje</th>
     </tr>
+    </thead>
+    <tbody>
     @foreach (var item in Model)
     {
         <tr>
@@ -20,8 +24,14 @@
                 <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">
                     Edytuj
                 </a>
-                    <input type="hidden" name="Id" value="@item.Id" />
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-warning">
+                    Usuń
+                </a>
+
+                <input type="hidden" name="Id" value="@item.Id"/>
             </td>
         </tr>
     }
+    </tbody>
+    
 </table>

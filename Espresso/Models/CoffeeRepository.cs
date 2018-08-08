@@ -14,6 +14,18 @@ namespace Espresso.Models
             _appDbContext = appDbContext;
         }
 
+        public Coffee DeleteCoffee(int coffeeId)
+        {
+            Coffee dbCoffee = _appDbContext.Coffees.FirstOrDefault(c => c.Id == coffeeId);
+            if (dbCoffee != null)
+            {
+                _appDbContext.Coffees.Remove(dbCoffee);
+                _appDbContext.SaveChanges();
+            }
+
+            return dbCoffee;
+        }
+
         public IEnumerable<Coffee> GetAllCoffees()
         {
              return _appDbContext.Coffees;

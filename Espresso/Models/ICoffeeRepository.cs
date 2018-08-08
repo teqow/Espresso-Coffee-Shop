@@ -13,5 +13,6 @@ namespace Espresso.Models
 
         void SaveCoffe(Coffee coffee);
 
+        Coffee DeleteCoffee(int coffeeId);
     }
 }

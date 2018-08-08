@@ -49,6 +49,20 @@ namespace Espresso.Controllers
                 return View(coffee);
             }
         }
+
+        public ViewResult Create() => View("Edit", new Coffee());
+
+        [HttpPost]
+        public IActionResult Delete(int coffeeId)
+        {
+            Coffee deleteCoffee= _coffeeRepository.DeleteCoffee(coffeeId);
+            if (deleteCoffee != null)
+            {
+                TempData["message"] = $"Usunięto {deleteCoffee.Name}.";
+            }
+
+            return RedirectToAction("Index");
+        }
     }
 }
 
