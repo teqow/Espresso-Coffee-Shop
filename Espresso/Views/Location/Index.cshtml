@@ -4,6 +4,8 @@
 
 <title>@ViewBag.Title</title>
 <h2>Our Location via Google Maps!</h2>
+<div class="fixed-bottom">
+
 <fieldset>
     <legend style="font-family: Arial Black; color: black; font-size: large;">Kraków City</legend>
     <meta charset="utf-8">
@@ -26,5 +28,6 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcrpwx7O9eJp5nlnuJnBDWz5l1dNLNIwA&callback=myMap"></script>
 </fieldset>
 <footer>
-    <p @DateTime.Now.ToLocalTime()</p> @*Add Date Time*@
-</footer>  
+    <p>@DateTime.Now.ToLocalTime()</p> @*Add Date Time*@
+</footer>
+</div>

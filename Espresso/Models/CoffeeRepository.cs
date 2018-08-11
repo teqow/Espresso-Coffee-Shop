@@ -38,7 +38,8 @@ namespace Espresso.Models
 
         public void SaveCoffe(Coffee coffee)
         {
-            _appDbContext.Add(coffee);
+            _appDbContext.Coffees.Add(coffee);
+            _appDbContext.SaveChanges();
         }
 
 

@@ -13,14 +13,22 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-controller="Home" asp-action="Index" class="navbar-brand">Espresso Coffee</a></li>
-                    <li><a asp-controller="Feedback" asp-action="Index">Feedback</a></li>
-                    <li><a asp-controller="Location" asp-action="Index">Location</a></li>
-                    <li><a asp-controller="Contact" asp-action="Index">Contact</a></li>
+                <ul class="nav navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link navbar-brand" asp-controller="Home" asp-action="Index" >Espresso Coffee</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Feedback" asp-action="Index">Feedback</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Location" asp-action="Index">Location</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Contact" asp-action="Index">Contact</a>
+                    </li>
                 </ul>
 
                 @if (SignInManager.IsSignedIn(User))
@@ -35,8 +43,12 @@
                 else
                 {
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a id="registerLink" asp-controller="Account" asp-action="Register">Register</a></li>
-                        <li><a id="loginLink" asp-controller="Account" asp-action="Login">Login</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="registerLink" asp-controller="Account" asp-action="Register">Register</a>
+                        </li>
+                        <li class="nav-item" >
+                            <a class="nav-link" id="loginLink" asp-controller="Account" asp-action="Login">Login</a>
+                        </li>
                     </ul>
                 }
 
