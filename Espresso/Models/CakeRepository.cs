@@ -30,6 +30,24 @@ namespace Espresso.Models
             return _appDbContext.Cakes.FirstOrDefault(c => c.Id == cakeId);
         }
 
-        
+        public void SaveCake(Cake cake)
+        {
+            _appDbContext.Cakes.Add(cake);
+            _appDbContext.SaveChanges();
+
+        }
+
+        public Cake DeleteCake(int cakeId)
+        {
+            Cake dbCake = _appDbContext.Cakes.FirstOrDefault(c => c.Id == cakeId);
+
+            if (dbCake != null)
+            {
+                _appDbContext.Cakes.Remove(dbCake);
+                _appDbContext.SaveChanges();
+            }
+
+            return dbCake;
+        }
     }
 }

@@ -17,15 +17,34 @@ namespace Espresso.Controllers
     public class AdminController : Controller
     {
         private readonly ICoffeeRepository _coffeeRepository;
+        private readonly ICakeRepository _cakeRepository;
+        private readonly IDrinksRepository _drinksRepository;
 
-        public AdminController(ICoffeeRepository coffeeRepository)
+        public AdminController(ICoffeeRepository coffeeRepository, ICakeRepository cakeRepository, IDrinksRepository drinksRepository)
         {
             _coffeeRepository = coffeeRepository;
+            _cakeRepository = cakeRepository;
+            _drinksRepository = drinksRepository;
         }
 
-
         [HttpGet]
-        public IActionResult Index() => View(_coffeeRepository.GetAllCoffees());
+        public IActionResult Index()
+        {
+            var coffes = _coffeeRepository.GetAllCoffees();
+            var cakes = _cakeRepository.GetAllCakes();
+            var drinks = _drinksRepository.GetAllDrinks();
+
+            var adminViewModel = new AdminViewModel()
+            {
+                Coffees = coffes.ToList(),
+                Cakes = cakes.ToList(),
+                Drinkses = drinks.ToList()
+                
+            };
+
+            return View(adminViewModel);
+        }
+
 
         [HttpGet]
         public IActionResult Edit(int id)
@@ -34,6 +53,8 @@ namespace Espresso.Controllers
 
             return View(coffee);
         }
+
+      
 
         [HttpPost]
         public IActionResult Edit(Coffee coffee)

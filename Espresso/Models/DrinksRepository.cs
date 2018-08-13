@@ -14,6 +14,18 @@ namespace Espresso.Models
             _appDbContext = appDbContext;
         }
 
+        public Drinks DeleteDrinks(int drinksId)
+        {
+            Drinks  dbDrinks = _appDbContext.Drinks.FirstOrDefault(d => d.Id == drinksId);
+            if (dbDrinks != null)
+            {
+                _appDbContext.Drinks.Remove(dbDrinks);
+                _appDbContext.SaveChanges();
+            }
+
+            return dbDrinks;
+        }
+
         public IEnumerable<Drinks> GetAllDrinks()
         {
             return _appDbContext.Drinks;
@@ -22,6 +34,12 @@ namespace Espresso.Models
         public Drinks GetDrinksById(int drinksId)
         {
             return _appDbContext.Drinks.FirstOrDefault(d => d.Id == drinksId);
+        }
+
+        public void SaveDrinks(Drinks drinks)
+        {
+            _appDbContext.Drinks.Add(drinks);
+            _appDbContext.SaveChanges();
         }
     }
 }

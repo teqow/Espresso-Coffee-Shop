@@ -10,5 +10,9 @@ namespace Espresso.Models
         IEnumerable<Drinks> GetAllDrinks();
 
         Drinks GetDrinksById(int drinksId);
+
+        void SaveDrinks(Drinks drinks);
+
+        Drinks DeleteDrinks(int drinksId);
     }
 }

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Coffee>
+﻿@model AdminViewModel
 @{
     Layout = "_AdminLayout";
 }
@@ -14,14 +14,50 @@
     </tr>
     </thead>
     <tbody>
-    @foreach (var item in Model)
+    @foreach (var item in Model.Coffees)
     {
         <tr>
-            <td class="text-right">@item.Id</td>
+            <td class="text-right">@item.Id Coffees</td>
             <td>@item.Name</td>
             <td class="text-right">@item.Price.ToString("c")</td>
             <td class="text-center">
-                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">
+                <a asp-action="Edit"  asp-route-id="@item.Id" class="btn btn-sm btn-warning">
+                    Edytuj
+                </a>
+                <a asp-action="Delete"  asp-route-id="@item.Id" class="btn btn-sm btn-warning">
+                    Usuń
+                </a>
+
+                <input type="hidden" name="Id" value="@item.Id"/>
+            </td>
+        </tr>
+    }
+    @foreach (var item in Model.Cakes)
+    {
+        <tr>
+            <td class="text-right">@item.Id Cakes</td>
+            <td>@item.Name</td>
+            <td class="text-right">@item.Price.ToString("c")</td>
+            <td class="text-center">
+                <a asp-action="Edit" asp-route-cakes="" asp-route-id="@item.Id" class="btn btn-sm btn-warning">
+                    Edytuj
+                </a>
+                <a asp-action="Delete" asp-route-cakes="" asp-route-id="@item.Id" class="btn btn-sm btn-warning">
+                    Usuń
+                </a>
+
+                <input type="hidden" name="Id" value="@item.Id"/>
+            </td>
+        </tr>
+    }
+    @foreach (var item in Model.Drinkses)
+    {
+        <tr>
+            <td class="text-right">@item.Id Drinks</td>
+            <td>@item.Name</td>
+            <td class="text-right">@item.Price.ToString("c")</td>
+            <td class="text-center">
+                <a asp-action="Edit"  asp-route-id="@item.Id" class="btn btn-sm btn-warning">
                     Edytuj
                 </a>
                 <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-warning">

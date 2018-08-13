@@ -11,6 +11,8 @@ namespace Espresso.Models
 
         Cake GetCakeById(int cakeId);
 
-        void AddCake(Cake cake);
+        void SaveCake(Cake cake);
+
+        Cake DeleteCake(int cakeId);
     }
 }
