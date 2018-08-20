@@ -1,4 +1,8 @@
 ﻿@model HomeViewModel
+@{
+    Layout = "_Layout";
+}
+
 
 <html>
 <head>
@@ -7,58 +11,67 @@
 </head>
 
 <body>
-    <h1>Welcome Our Local!</h1>
-    <img src="http://velo-espresso.uk/wp-content/uploads/2016/05/Shop8-e1463069307529.jpg" height="700" width="1200" alt="Local" />
-
-    <h2>@Model.Title</h2>
-
-<div style="height:150px; width: 50%;">
-    @foreach (var stuff in Model.Stuffs)
-    {
-        if (stuff.Id == 1)
-        {
-            <div class="col-sm-4 col-lg-4 col-md-4">
-                <div class="thumbnail">
-                    <img src="@stuff.ImageUrl" style="height: 450px; width: 600px" alt="">
-                    <div class="caption">
-                        <h3>
-                            <a asp-controller="Coffee">@stuff.Name</a>
-                        </h3>
-                    </div>
-                </div>
+    <section class="my-section-jumbotron">
+        <div class="jumbotron jumbotron-fluid my-jumbotron d-flex align-items-center">
+            <div class="container text-center my-jumbotron-slogan">
+                <h1 class="display-4 text-white text-uppercase my-jumbotron-text my-4">
+                    Zapraszamy
+                    <span class="text-warning font-weight-bold">Do</span> Nas!
+                </h1>
             </div>
-        }
-        else if (stuff.Id == 2)
-        {
-            <div class="col-sm-4 col-lg-4 col-md-4">
-                <div class="thumbnail">
-                    <img src="@stuff.ImageUrl" style="height: 450px; width: 600px" alt="">
-                    <div class="caption">
-                        <h3>
-                            <a asp-controller="Cake">@stuff.Name</a>
-                        </h3>
-                    </div>
-                </div>
+        </div>
+    </section>
+
+    <section class="my-menu">
+
+        <h3>@Model.Title</h3>
+
+        <div class="container">
+            <div class="row justify-content-between py-4">
+                @foreach (var stuff in Model.Stuffs)
+                {
+                    if (stuff.Id == 1)
+                    {
+                        <div class="row justify-content-around">
+                            <div class="col-sm-4 col-lg-4 col-md-4">
+                                <img class="my-menu-img" src="@stuff.ImageUrl" alt="">
+                                <h3>
+                                    <a asp-controller="Coffee">@stuff.Name</a>
+                                </h3>
+                            </div>
+                        </div>
+                    }
+                    else if (stuff.Id == 2)
+                    {
+                        <div class="row justify-content-around">
+                            <div class="col-sm-4 col-lg-4 col-md-4">
+                                <img class="my-menu-img" src="@stuff.ImageUrl" alt="">
+                                <h3>
+                                    <a asp-controller="Cake">@stuff.Name</a>
+                                </h3>
+                            </div>
+                        </div>
+
+                    }
+                    else if (stuff.Id == 3)
+                    {
+                        <div class="row justify-content-around">
+                            <div class="col-sm-4 col-lg-4 col-md-4">
+                                <img class="my-menu-img" src="@stuff.ImageUrl" alt="">
+                                <h3>
+                                    <a asp-controller="Drinks">@stuff.Name</a>
+                                </h3>
+                            </div>
+                        </div>
+
+                    }
+
+                }
             </div>
+        </div>
+    </section>
 
-        }
-        else if (stuff.Id == 3)
-        {
-            <div class="col-sm-4 col-lg-4 col-md-4">
-                <div class="thumbnail">
-                    <img src="@stuff.ImageUrl" style="height: 450px; width: 600px" alt="">
-                    <div class="caption">
-                        <h3>
-                            <a asp-controller="Drinks">@stuff.Name</a>
-                        </h3>
-                    </div>
-                </div>
-            </div>
 
-        }
 
-    }
-</div>
-   
 </body>
 </html>

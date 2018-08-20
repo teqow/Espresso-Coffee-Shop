@@ -6,58 +6,64 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport"  />
     <title>@ViewBag.Title</title>
     <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
+    <header>
 
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link navbar-brand" asp-controller="Home" asp-action="Index" >Espresso Coffee</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Feedback" asp-action="Index">Feedback</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Location" asp-action="Index">Location</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Contact" asp-action="Index">Contact</a>
-                    </li>
-                </ul>
-
-                @if (SignInManager.IsSignedIn(User))
-                {
-                    <form asp-area="" asp-controller="Account" asp-action="Logout" id="logoutForm"
-                          method="post" class="navbar-right">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-                        </ul>
-                    </form>
-                }
-                else
-                {
-                    <ul class="nav navbar-nav navbar-right">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" id="registerLink" asp-controller="Account" asp-action="Register">Register</a>
+                            <a class="nav-link navbar-brand" asp-controller="Home" asp-action="Index">Espresso Coffee</a>
                         </li>
-                        <li class="nav-item" >
-                            <a class="nav-link" id="loginLink" asp-controller="Account" asp-action="Login">Login</a>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Feedback" asp-action="Index">Feedback</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Location" asp-action="Index">Location</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Contact" asp-action="Index">Contact</a>
                         </li>
                     </ul>
-                }
 
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <form asp-area="" asp-controller="Account" asp-action="Logout" id="logoutForm"
+                              method="post" class="navbar-right">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                            </ul>
+                        </form>
+                    }
+                    else
+                    {
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="nav-item">
+                                <a class="nav-link" id="registerLink" asp-controller="Account" asp-action="Register">Register</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="loginLink" asp-controller="Account" asp-action="Login">Login</a>
+                            </li>
+                        </ul>
+                    }
+
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
+
     <div class="container body-content">
         <div class="row">
-            @RenderBody()
+            <div class="col-lg-12 ">
+                @RenderBody()
+
+            </div>
         </div>
     </div>
 
